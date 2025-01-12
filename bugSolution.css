@@ -1,0 +1,10 @@
+The solution involves calculating the width using JavaScript and applying it to the element's style.  This avoids the limitations of the `calc()` function in handling element widths directly.  The JavaScript code will get the width of #elementId and subtract that from 50vw to set the width of the relevant element.  For example:
+
+```javascript
+const element = document.getElementById('elementId');
+const elementWidth = element.offsetWidth;
+const viewportWidth = window.innerWidth;
+const targetWidth = viewportWidth * 0.5 - elementWidth;
+document.getElementById('targetElement').style.width = `${targetWidth}px`;
+```
+This JavaScript code should be placed in a `<script>` tag in your HTML file. Make sure it runs after the element with `id="elementId"` is loaded in the DOM.  The CSS will then only need to be a basic style for the element, avoiding complex calculations.
